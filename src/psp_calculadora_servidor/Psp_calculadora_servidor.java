@@ -51,9 +51,9 @@ public class Psp_calculadora_servidor {
                 System.out.println("Mensaje recibido: " + valores[0] + "," + valores[1] + "," + valores[2]);
 
                 //Filtramos las operaciones y guardamos el resultado en respuesta
-                String respuesta = "Respuesta: ";
-                int valor1 = Integer.parseInt(valores[0]);
-                int valor2 = Integer.parseInt(valores[1]);
+                String respuesta = "";
+                float valor1 = Float.parseFloat(valores[0]);
+                float valor2 = Float.parseFloat(valores[1]);
                 float resultado;
                 if (valores[2].equals("suma")) {
                     resultado = valor1 + valor2;
