@@ -55,17 +55,22 @@ public class Psp_calculadora_servidor {
                 float valor1 = Float.parseFloat(valores[0]);
                 float valor2 = Float.parseFloat(valores[1]);
                 float resultado;
-                if (valores[2].equals("suma")) {
+                if (valores[2].equals("+")) {
                     resultado = valor1 + valor2;
                     respuesta = respuesta + resultado;
-                } else if (valores[2].equals("resta")) {
+                } else if (valores[2].equals("-")) {
                     resultado = valor1 - valor2;
                     respuesta = respuesta + resultado;
-                } else if (valores[2].equals("multip")) {
+                } else if (valores[2].equals("*")) {
                     resultado = valor1 * valor2;
                     respuesta = respuesta + resultado;
-                } else if (valores[2].equals("division")) {
-                    resultado = valor1 / valor2;
+                } else if (valores[2].equals("/")) {
+                    if(valor1!=0 && valor2!=0){
+                        resultado = valor1 / valor2;
+                    }else {
+                        //para evitar los infinitos, aunque no sea tecnicamente correcto
+                        resultado=0;
+                    }
                     respuesta = respuesta + resultado;
                 } else if (valores[2].equals("salir")) {
                     respuesta = "Gracias por utilizar la calculadora de Omar";
